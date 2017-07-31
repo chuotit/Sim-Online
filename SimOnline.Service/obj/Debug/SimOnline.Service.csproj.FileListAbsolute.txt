@@ -1,0 +1,17 @@
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\SimOnline.Service.dll
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\SimOnline.Service.pdb
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\SimOnline.Data.dll
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\SimOnline.Model.dll
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\SimOnline.Data.pdb
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\SimOnline.Model.pdb
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\SimOnline.Model.dll.config
+E:\My projects\Sim\SimOnline\SimOnline.Service\obj\Debug\SimOnline.Service.csprojResolveAssemblyReference.cache
+E:\My projects\Sim\SimOnline\SimOnline.Service\obj\Debug\SimOnline.Service.dll
+E:\My projects\Sim\SimOnline\SimOnline.Service\obj\Debug\SimOnline.Service.pdb
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\EntityFramework.dll
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\SimOnline.Data.dll.config
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\EntityFramework.xml
+E:\My projects\Sim\SimOnline\SimOnline.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
