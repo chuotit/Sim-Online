@@ -1,0 +1,16 @@
+﻿.skin-default {
+    .content-header {
+        > .breadcrumb {
+            float: none;
+            background: transparent;
+            margin-top: 0px;
+            margin-bottom: 0;
+            font-size: 12px;
+            padding: 7px 5px;
+            position: static;
+            top: auto;
+            right: auto;
+            border-radius: 2px;
+        }
+    }
+}

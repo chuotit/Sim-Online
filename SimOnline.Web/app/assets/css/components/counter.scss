@@ -1,0 +1,38 @@
+.counter {
+    .counter-item {
+        background: $brand-success;
+        padding: 15px 0;
+        .counter-number {
+            color: $gray;
+            font-size: 50px;
+            line-height: 50px;
+            font-weight: 700;
+            display: inline-block;
+            position: relative;
+            padding-right: 30px;
+            &::after {
+                position: absolute;
+                content: '+';
+                top: 0;
+                bottom: 0;
+                right: 0;
+                font-size: 50px;
+            }
+        }
+        .counter-name {
+            color: $white-color;
+            font-size: 26px;
+            line-height: 26px;
+            font-weight: 700;
+        }
+        &.other-item {
+            background: $gray;
+            .counter-number {
+                color: $white-color;
+            }
+            .counter-name {
+                color: $brand-success;
+            }
+        }
+    }
+}

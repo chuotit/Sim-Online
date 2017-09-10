@@ -5,11 +5,13 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using SimOnline.Model.Models;
 using SimOnline.Service;
 
 namespace SimOnline.Web.Infrastructure.Core
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ApiControllerBase : ApiController
     {
         private IErrorService _errorService;

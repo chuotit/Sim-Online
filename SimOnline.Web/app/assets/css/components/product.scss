@@ -1,0 +1,37 @@
+.products {
+	.categories {
+		margin-bottom: 20px;
+		background: $brand-success;
+		height: 55px;
+		line-height: 55px;
+		padding: 0 15px;
+		.cat-title,
+		a {
+			line-height: 55px;
+			color: #fff;
+			font-size: 18px;
+		}
+		.cat-list {
+			font-size: 0;
+			li {
+				display: inline-block;
+				margin-left: 30px;
+				&::first-child {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+	.list-item {
+		.item-title {
+			a {
+				line-height: 40px;
+				position: relative;
+				z-index: 99;
+				background: $color-1;
+				font-size: 18px;
+				color: $gray;
+			}
+		}
+	}
+}

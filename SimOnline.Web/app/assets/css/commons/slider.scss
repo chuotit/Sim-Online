@@ -1,0 +1,34 @@
+.page-slide {
+    z-index: unset;
+    .slide-item {
+        
+    }
+    .slide-content {
+        display: none;
+    }
+    .owl-nav {
+        > div {
+            position: absolute;
+            top: 50%;
+            height: 50px;
+            width: 30px;
+            line-height: 50px;
+            text-align: center;
+            background: #fff;
+            opacity: .5;
+            margin-top: -25px;
+            z-index: 99999;
+            color: #ff4e0b;
+            @include border-radius(1px);
+            &.owl-prev {
+                left: 10px;
+            }
+            &.owl-next {
+                right: 10px;
+            }
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+}

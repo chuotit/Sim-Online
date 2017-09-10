@@ -31,7 +31,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,15 +54,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsignerLevelService.cs" />
-    <Compile Include="ConsignerService.cs" />
+    <Compile Include="AppGroupService.cs" />
+    <Compile Include="AppRoleService.cs" />
+    <Compile Include="AgentLevelService.cs" />
+    <Compile Include="AgentService.cs" />
     <Compile Include="ErrorService.cs" />
     <Compile Include="FirstNumberService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimNetworkService.cs" />
-    <Compile Include="SimNumberService.cs" />
+    <Compile Include="SimStoreService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimOnline.Common\SimOnline.Common.csproj">
+      <Project>{f67c3c5d-4e50-4b27-aa4f-111d6bf43c9c}</Project>
+      <Name>SimOnline.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimOnline.Data\SimOnline.Data.csproj">
       <Project>{75dff17e-579e-44ae-870b-2b33d6ced73c}</Project>
       <Name>SimOnline.Data</Name>
@@ -58,6 +77,10 @@
       <Project>{d2a0b2e7-10fa-49dc-86a8-8dc4d3836f81}</Project>
       <Name>SimOnline.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

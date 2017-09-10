@@ -20,7 +20,7 @@ namespace SimOnline.Web.Models
 
         public Boolean HomeFlag { set; get; }
 
-        public virtual IEnumerable<SimNumberViewModel> SimNumbers { set; get; }
+        public virtual IEnumerable<SimStoreViewModel> SimStores { set; get; }
 
         public string MetaDescription { set; get; }
 

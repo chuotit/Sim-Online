@@ -19,7 +19,7 @@ namespace SimOnline.Web.Models
 
         public virtual IEnumerable<FirstNumberViewModel> FirstNumbers { set; get; }
 
-        public virtual IEnumerable<SimNumberViewModel> SimNumbers { set; get; }
+        public virtual IEnumerable<SimStoreViewModel> SimStores { set; get; }
 
         public string MetaDescription { set; get; }
 

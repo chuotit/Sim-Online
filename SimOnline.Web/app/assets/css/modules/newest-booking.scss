@@ -1,0 +1,53 @@
+.newest-booking {
+    .booking-list {
+        margin-top: 10px;
+        .booking-item {
+            margin-top: 15px;
+            &:first-child {
+                margin-top: 0;
+            }
+            .booking-title {
+                line-height: 15px;
+                color: #333;
+                font-size: 13px;
+                font-weight: 400;
+                padding-left: 10px;
+                @include awesome-icon('before', '\f0da', #333, 13px, 15px, 0, auto, 0, 0);
+                label {
+                    font-weight: 700;
+                    margin-bottom: 0;
+                }
+            }
+            .booking-info {
+                .air-logo {
+                    @include size(50px, auto);
+                    display: block;
+                    margin-right: 10px;
+                    border: 1px solid #999;
+                    img {
+                        @include img-responsive();
+                    }
+                }
+                .booking-time {
+                    @include size(100px, auto);
+                    line-height: 30px;
+                    margin: 0 10px 0 0;
+                    padding-left: 15px;
+                    @include awesome-icon('before', '\f017', #333, 13px, 30px, 0, auto, 0, 0);
+                }
+                .booking-price {
+                    @include size(100px, auto);
+                    line-height: 30px;
+                    margin: 0 10px 0 0;
+                    font-weight: 700;
+                    span {
+                        color: $best-price-item-price-color;
+                    }
+                }
+                .booking-detail {
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}

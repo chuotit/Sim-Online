@@ -13,6 +13,7 @@ using SimOnline.Web.Models;
 namespace SimOnline.Web.API
 {
     [RoutePrefix("api/firstnumber")]
+    //[Authorize]
     public class FirstNumberController : ApiControllerBase
     {
         private IFirstNumberService _firstNumberService;

@@ -81,14 +81,54 @@
     <Compile Include="Migrations\201707290500446_UpdateSimnumberProperties.Designer.cs">
       <DependentUpon>201707290500446_UpdateSimnumberProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708231426235_RenameTableIdentity.cs" />
+    <Compile Include="Migrations\201708231426235_RenameTableIdentity.Designer.cs">
+      <DependentUpon>201708231426235_RenameTableIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231430417_RenameTableIdentity2.cs" />
+    <Compile Include="Migrations\201708231430417_RenameTableIdentity2.Designer.cs">
+      <DependentUpon>201708231430417_RenameTableIdentity2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231440109_RenameTableIdentity3.cs" />
+    <Compile Include="Migrations\201708231440109_RenameTableIdentity3.Designer.cs">
+      <DependentUpon>201708231440109_RenameTableIdentity3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708231713334_AddGroupUser.cs" />
+    <Compile Include="Migrations\201708231713334_AddGroupUser.Designer.cs">
+      <DependentUpon>201708231713334_AddGroupUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041220591_UpdateTablesName.cs" />
+    <Compile Include="Migrations\201709041220591_UpdateTablesName.Designer.cs">
+      <DependentUpon>201709041220591_UpdateTablesName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041236379_UpdateTablesName2.cs" />
+    <Compile Include="Migrations\201709041236379_UpdateTablesName2.Designer.cs">
+      <DependentUpon>201709041236379_UpdateTablesName2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041251169_UpdateForeignKeyAgentAppUser.cs" />
+    <Compile Include="Migrations\201709041251169_UpdateForeignKeyAgentAppUser.Designer.cs">
+      <DependentUpon>201709041251169_UpdateForeignKeyAgentAppUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041652492_UpdateTable.cs" />
+    <Compile Include="Migrations\201709041652492_UpdateTable.Designer.cs">
+      <DependentUpon>201709041652492_UpdateTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709041726447_UpdateAgentIDPropertiy.cs" />
+    <Compile Include="Migrations\201709041726447_UpdateAgentIDPropertiy.Designer.cs">
+      <DependentUpon>201709041726447_UpdateAgentIDPropertiy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ConsignerLevelRepository.cs" />
-    <Compile Include="Repositories\ConsignerRepository.cs" />
+    <Compile Include="Repositories\AppGroupRepository.cs" />
+    <Compile Include="Repositories\AppRoleGroupRepository.cs" />
+    <Compile Include="Repositories\AppRoleRepository.cs" />
+    <Compile Include="Repositories\AppUserGroupRepository.cs" />
+    <Compile Include="Repositories\AgentLevelRepository.cs" />
+    <Compile Include="Repositories\AgentRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\FirstNumberRepository.cs" />
     <Compile Include="Repositories\SimNetworkRepository.cs" />
-    <Compile Include="Repositories\SimNumberRepository.cs" />
+    <Compile Include="Repositories\SimStoreRepository.cs" />
     <Compile Include="SimOnlineDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +136,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SimOnline.Common\SimOnline.Common.csproj">
+      <Project>{f67c3c5d-4e50-4b27-aa4f-111d6bf43c9c}</Project>
+      <Name>SimOnline.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimOnline.Model\SimOnline.Model.csproj">
       <Project>{d2a0b2e7-10fa-49dc-86a8-8dc4d3836f81}</Project>
       <Name>SimOnline.Model</Name>
@@ -116,6 +160,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707290500446_UpdateSimnumberProperties.resx">
       <DependentUpon>201707290500446_UpdateSimnumberProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231426235_RenameTableIdentity.resx">
+      <DependentUpon>201708231426235_RenameTableIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231430417_RenameTableIdentity2.resx">
+      <DependentUpon>201708231430417_RenameTableIdentity2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231440109_RenameTableIdentity3.resx">
+      <DependentUpon>201708231440109_RenameTableIdentity3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708231713334_AddGroupUser.resx">
+      <DependentUpon>201708231713334_AddGroupUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041220591_UpdateTablesName.resx">
+      <DependentUpon>201709041220591_UpdateTablesName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041236379_UpdateTablesName2.resx">
+      <DependentUpon>201709041236379_UpdateTablesName2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041251169_UpdateForeignKeyAgentAppUser.resx">
+      <DependentUpon>201709041251169_UpdateForeignKeyAgentAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041652492_UpdateTable.resx">
+      <DependentUpon>201709041652492_UpdateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709041726447_UpdateAgentIDPropertiy.resx">
+      <DependentUpon>201709041726447_UpdateAgentIDPropertiy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

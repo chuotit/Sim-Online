@@ -1,0 +1,81 @@
+.checkbox-style {
+    margin: 0;
+    font-weight: 400;
+    line-height: $checkbox-height;
+    cursor: default !important;
+
+    input {
+        display: none;
+    }
+
+    .checkbox-lable {
+        padding-left: 5px;
+    }
+
+    [type=checkbox] {
+        + .box-style {
+            height: $checkbox-height;
+            width: $checkbox-width;
+            border: 1px solid $checkbox-border-color;
+            display: inline-block;
+            position: relative;
+            border-radius: 3px;
+            margin: 0px;
+            vertical-align: bottom;
+            background: $checkbox-default-bg;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            + .checkbox-lable {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &:checked {
+            + .box-style {
+                background: $checkbox-default-bg;
+
+                &:before {
+                    content: $checkbox-icon-style;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    font-family: "FontAwesome";
+                    font-size: $checkbox-icon-size;
+                    color: $text-color-base;
+                    text-align: center;
+                    line-height: $checkbox-height - 2;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &[disabled], &:checked[disabled] {
+            + .box-style {
+                background: $checkbox-disabled-bg;
+                border-color: $checkbox-disabled-border-color;
+
+                &:hover {
+                    cursor: not-allowed;
+                }
+
+                + .checkbox-lable {
+                    &:hover {
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+}
+.checkbox {
+    label {
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,33 @@
+.form-search {
+    &.in-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        background: $backdrop-dialog-bg;
+        @include transition(5s, sase);
+        .search-ticket {
+            float: right;
+            margin-top: 30px;
+            height: 300px;
+            width: 500px;
+            .nav-tabs {
+                margin-left: 15px;
+            }
+            .tab-content {
+                background: $tab-content-bg;
+                border-radius: $border-radius-base;
+                color: #fff;
+                .tab-ticket {
+                    padding: 15px;
+                }
+            }
+        }
+        &:hover {
+            background: transparent;
+            @include transition(5s, sase);
+        }
+    }
+}

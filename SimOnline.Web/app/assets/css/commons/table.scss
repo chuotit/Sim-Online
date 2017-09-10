@@ -1,0 +1,51 @@
+.skin-default {
+    .table {
+        // Account for multiple tbody instances
+        > tbody + tbody {
+            border-top: 1px solid $table-border-color;
+        }
+
+        > thead, > tbody {
+            > tr {
+                > th, > td {
+                    border-bottom-width: 1px;
+                    padding: 6px;
+                    white-space: nowrap;
+
+                    &.col-checkbox {
+                        width: 5%;
+                        min-width: 50px;
+                    }
+
+                    &.col-order {
+                        width: 6%;
+                        min-width: 60px;
+                    }
+
+                    &.col-status {
+                        width: 8%;
+                        min-width: 100px;
+                    }
+
+                    &.col-controlls {
+                        width: 20%;
+                        min-width: 125px;
+                    }
+                }
+            }
+        }
+    }
+    // Bordered version
+    //
+    // Add borders all around the table and between all the columns.
+    .table-bordered {
+        > thead > tr {
+            background: $table-thead-bg;
+
+            > th,
+            > td {
+                border-bottom-width: 1px;
+            }
+        }
+    }
+}

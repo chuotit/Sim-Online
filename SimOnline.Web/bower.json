@@ -1,0 +1,24 @@
+{
+  "name": "SimOnline",
+  "private": true,
+    "dependencies": {
+        "jQuery": "~3.2.1",
+        "bootstrap-sass": "~3.3.7",
+        "font-awesome-sass": "~4.7.0",
+        "angular": "v1.6.5-build.5410+sha.a03b75c",
+        "angular-ui-router": "0.4.2",
+        "admin-lte-sass": "~3.1.2",
+        "toastr": "~2.1.3",
+        "bootbox": "~4.4.0",
+        "ngBootbox": "~0.2.0",
+        "angular-bootstrap": "~2.5.0",
+        "angular-js-xlsx": "~0.0.3",
+        "jquery-json": "~2.6.0",
+        "angular-local-storage": "~0.7.1",
+        "angular-loading-bar": "~0.9.0",
+        "angular-breadcrumb": "~0.5.0"
+    },
+  "resolutions": {
+    "angular": "v1.6.5-build.5410+sha.a03b75c"
+  }
+}

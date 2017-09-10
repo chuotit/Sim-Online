@@ -1,4 +1,5 @@
-﻿using SimOnline.Model.Models;
+﻿using System;
+using SimOnline.Model.Models;
 using SimOnline.Web.Models;
 
 namespace SimOnline.Web.Infrastructure.Extensions
@@ -41,49 +42,104 @@ namespace SimOnline.Web.Infrastructure.Extensions
             firstNumber.DisplayOrder = firstNumberViewModel.DisplayOrder;
         }
 
-        public static void UpdateSimNumber(this SimNumber simNumber, SimNumberViewModel simNumberViewModel)
+        public static void UpdateSimStore(this SimStore simStore, SimStoreViewModel simStoreViewModel)
         {
-            simNumber.SimID = simNumberViewModel.SimID;
-            simNumber.SimName = simNumberViewModel.SimName;
-            simNumber.NetWorkID = simNumberViewModel.NetWorkID;
-            simNumber.ConsignerID = simNumberViewModel.ConsignerID;
-            simNumber.Price = simNumberViewModel.Price;
-            simNumber.CreateDate = simNumberViewModel.CreateDate;
-            simNumber.UpdateDate = simNumberViewModel.UpdateDate;
-            simNumber.Status = simNumberViewModel.Status;
+            simStore.SimID = simStoreViewModel.SimID;
+            simStore.SimName = simStoreViewModel.SimName;
+            simStore.NetWorkID = simStoreViewModel.NetWorkID;
+            simStore.AgentID = simStoreViewModel.AgentID;
+            simStore.Price = simStoreViewModel.Price;
+            simStore.Discount = simStoreViewModel.Discount;
+            simStore.CreateDate = simStoreViewModel.CreateDate;
+            simStore.UpdateDate = simStoreViewModel.UpdateDate;
+            simStore.Status = simStoreViewModel.Status;
+        }
+        public static void UpdateSimAddNew(this SimStore simStore, SimStoreAddViewModel simAddNewViewModel)
+        {
+            simStore.SimName = simAddNewViewModel.SimName;
+            simStore.Price = simAddNewViewModel.Price;
         }
 
-        public static void UpdateConsigner(this Consigner consigner, ConsignerViewModel consignerViewModel)
+        public static void UpdateAgent(this Agent agent, AgentViewModel agentViewModel)
         {
-            consigner.ID = consignerViewModel.ID;
-            consigner.Name = consignerViewModel.Name;
-            consigner.ConsignerCode = consignerViewModel.ConsignerCode;
-            consigner.Hotline = consignerViewModel.Hotline;
-            consigner.Address = consignerViewModel.Address;
-            consigner.Website = consignerViewModel.Website;
-            consigner.Email = consignerViewModel.Email;
-            consigner.CreateDate = consignerViewModel.CreateDate;
-            consigner.CreateBy = consignerViewModel.CreateBy;
-            consigner.UpdateDate = consignerViewModel.UpdateDate;
-            consigner.UpdateBy = consignerViewModel.UpdateBy;
-            consigner.Status = consignerViewModel.Status;
-            consigner.DisplayOrder = consignerViewModel.DisplayOrder;
+            agent.AgentId = agentViewModel.AgentId;
+            agent.Name = agentViewModel.Name;
+            agent.AgentCode = agentViewModel.AgentCode;
+            agent.Hotline = agentViewModel.Hotline;
+            agent.Address = agentViewModel.Address;
+            agent.Website = agentViewModel.Website;
+            agent.Email = agentViewModel.Email;
+            agent.CreateDate = agentViewModel.CreateDate;
+            agent.CreateBy = agentViewModel.CreateBy;
+            agent.UpdateDate = agentViewModel.UpdateDate;
+            agent.UpdateBy = agentViewModel.UpdateBy;
+            agent.Status = agentViewModel.Status;
+            agent.DisplayOrder = agentViewModel.DisplayOrder;
         }
 
-        public static void UpdateConsignerLevel(this ConsignerLevel consignerLevel, ConsignerLevelViewModel consignerLevelViewModel)
+        public static void UpdateAgentLevel(this AgentLevel agentLevel, AgentLevelViewModel agentLevelViewModel)
         {
-            consignerLevel.ID = consignerLevelViewModel.ID;
-            consignerLevel.ConsignerID = consignerLevelViewModel.ConsignerID;
-            consignerLevel.Name = consignerLevelViewModel.Name;
-            consignerLevel.PriceFrom = consignerLevelViewModel.PriceFrom;
-            consignerLevel.PriceFrom = consignerLevelViewModel.PriceFrom;
-            consignerLevel.PriceTo = consignerLevelViewModel.PriceTo;
-            consignerLevel.Percent = consignerLevelViewModel.Percent;
-            consignerLevel.CreateDate = consignerLevelViewModel.CreateDate;
-            consignerLevel.CreateBy = consignerLevelViewModel.CreateBy;
-            consignerLevel.UpdateDate = consignerLevelViewModel.UpdateDate;
-            consignerLevel.UpdateBy = consignerLevelViewModel.UpdateBy;
-            consignerLevel.DisplayOrder = consignerLevelViewModel.DisplayOrder;
+            agentLevel.ID = agentLevelViewModel.ID;
+            agentLevel.AgentID = agentLevelViewModel.AgentID;
+            agentLevel.Name = agentLevelViewModel.Name;
+            agentLevel.PriceFrom = agentLevelViewModel.PriceFrom;
+            agentLevel.PriceFrom = agentLevelViewModel.PriceFrom;
+            agentLevel.PriceTo = agentLevelViewModel.PriceTo;
+            agentLevel.Percent = agentLevelViewModel.Percent;
+            agentLevel.CreateDate = agentLevelViewModel.CreateDate;
+            agentLevel.CreateBy = agentLevelViewModel.CreateBy;
+            agentLevel.UpdateDate = agentLevelViewModel.UpdateDate;
+            agentLevel.UpdateBy = agentLevelViewModel.UpdateBy;
+            agentLevel.DisplayOrder = agentLevelViewModel.DisplayOrder;
+        }
+
+        public static void UpdateRegisterAgent(this Agent agent, AgentRegisterViewModel agentRegisterViewModel)
+        {
+            agent.AgentId = agentRegisterViewModel.AgentId;
+            agent.Name = agentRegisterViewModel.Name;
+            agent.Hotline = agentRegisterViewModel.Hotline;
+            agent.Address = agentRegisterViewModel.Address;
+            agent.CreateDate = agentRegisterViewModel.CreateDate;
+            agent.CreateBy = agentRegisterViewModel.CreateBy;
+            agent.UpdateDate = agentRegisterViewModel.UpdateDate;
+            agent.UpdateBy = agentRegisterViewModel.UpdateBy;
+            agent.Status = agentRegisterViewModel.Status;
+            agent.DisplayOrder = agentRegisterViewModel.DisplayOrder;
+        }
+
+        public static void UpdateAppGroup(this AppGroup appGroup, AppGroupViewModel appGroupViewModel)
+        {
+            appGroup.ID = appGroupViewModel.ID;
+            appGroup.Name = appGroupViewModel.Name;
+        }
+
+        public static void UpdateAppRole(this AppRole appRole, AppRoleViewModel appRoleViewModel, string action = "add")
+        {
+            if (action == "update")
+                appRole.Id = appRoleViewModel.Id;
+            else
+                appRole.Id = Guid.NewGuid().ToString();
+            appRole.Name = appRoleViewModel.Name;
+            appRole.Description = appRoleViewModel.Description;
+        }
+        public static void UpdateUser(this AppUser appUser, AppUserViewModel appUserViewModel, string action = "add")
+        {
+
+            appUser.Id = appUserViewModel.Id;
+            appUser.FullName = appUserViewModel.FullName;
+            appUser.AgentID = appUserViewModel.AgentID;
+            appUser.BirthDay = appUserViewModel.BirthDay;
+            appUser.Email = appUserViewModel.Email;
+            appUser.UserName = appUserViewModel.UserName;
+            appUser.PhoneNumber = appUserViewModel.PhoneNumber;
+        }
+
+        public static void UpdateRegisterUser(this AppUser appUser, AgentRegisterViewModel agentRegisterViewModel)
+        {
+
+            appUser.UserName = agentRegisterViewModel.UserName;
+            appUser.Email = agentRegisterViewModel.Email;
+            appUser.AgentID = agentRegisterViewModel.AgentId;
         }
     }
 }

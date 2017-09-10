@@ -55,18 +55,28 @@
   <ItemGroup>
     <Compile Include="Abstract\Auditable.cs" />
     <Compile Include="Abstract\IAuditable.cs" />
-    <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\Consigner.cs" />
-    <Compile Include="Models\ConsignerLevel.cs" />
+    <Compile Include="Models\AppGroup.cs" />
+    <Compile Include="Models\AppRole.cs" />
+    <Compile Include="Models\AppRoleGroup.cs" />
+    <Compile Include="Models\AppUserGroup.cs" />
+    <Compile Include="Models\AppUser.cs" />
+    <Compile Include="Models\Agent.cs" />
+    <Compile Include="Models\AgentLevel.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\FirstNumber.cs" />
     <Compile Include="Models\SimNetwork.cs" />
-    <Compile Include="Models\SimNumber.cs" />
+    <Compile Include="Models\SimStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimOnline.Common\SimOnline.Common.csproj">
+      <Project>{f67c3c5d-4e50-4b27-aa4f-111d6bf43c9c}</Project>
+      <Name>SimOnline.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

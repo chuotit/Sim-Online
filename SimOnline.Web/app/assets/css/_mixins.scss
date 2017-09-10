@@ -1,0 +1,134 @@
+// transition
+@mixin transition($duration, $timing) {
+    transition: All $duration $timing;
+    -webkit-transition: All $duration $timing;
+    -moz-transition: All $duration $timing;
+    -o-transition: All $duration $timing;
+}
+
+// generic transform
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+// rotate
+@mixin rotate ($deg) {
+    @include transform(rotate($deg));
+}
+
+// scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+// translate
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+//Border-radius
+// .box { @include border-radius($border-radius-small); }
+$border-radius-none: 0px;
+$border-radius-small: 3px;
+$border-radius-base: 4px;
+$border-radius-large: 6px;
+$border-radius-circle: 50%;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin border-top-left-radius($radius) {
+  -webkit-border-top-left-radius: $radius;
+     -moz-border-top-left-radius: $radius;
+      -ms-border-top-left-radius: $radius;
+          border-top-left-radius: $radius;
+}
+@mixin border-top-right-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+     -moz-border-top-right-radius: $radius;
+      -ms-border-top-right-radius: $radius;
+          border-top-right-radius: $radius;
+}
+@mixin border-bottom-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+     -moz-border-bottom-left-radius: $radius;
+      -ms-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+}
+@mixin border-bottom-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+     -moz-border-bottom-right-radius: $radius;
+      -ms-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+}
+
+//appearent
+@mixin appearance ($appearance) {
+  -webkit-appearance: $appearance;
+    -moz-appearance: $appearance;
+    -ms-appearance: $appearance;
+    -o-appearance: $appearance;
+    appearance: $appearance;
+}
+
+@mixin box-shadow ($box-shadow) {
+  box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  -webkit-box-shadow: $box-shadow;
+  -o-box-shadow: $box-shadow;
+  -ms-box-shadow: $box-shadow;
+}
+
+//font icon awesome
+@mixin awesome-icon($index, $unicode, $color, $font-size, $line-hight, $top, $right, $bottom, $left) {
+    position: relative;
+    @if $index == 'before' {
+        &::before {
+            position: absolute;
+            font-family: "FontAwesome";
+            content: $unicode;
+            color: $color;
+            font-size: $font-size;
+            line-height: $line-hight,;
+            top: $top;
+            right: $right;
+            bottom: $bottom;
+            left: $left;
+        }
+    }
+    @if $index == 'after' {
+        &::after {
+            position: absolute;
+            font-family: "FontAwesome";
+            content: $unicode;
+            color: $color;
+            font-size: $font-size;
+            line-height: $line-hight,;
+            top: $top;
+            right: $right;
+            bottom: $bottom;
+            left: $left;
+        }
+    }
+}

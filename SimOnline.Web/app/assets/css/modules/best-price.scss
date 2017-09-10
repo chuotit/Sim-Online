@@ -1,0 +1,35 @@
+.best-price {
+    .best-price-item {
+        background: $best-price-item-background;
+        @include border-radius(5px);
+        display: block;
+        padding: 15px;
+        .city-name {
+            display: block;
+            color: $best-price-item-city-color;
+            font-size: $best-price-item-city-size;
+            font-weight: 700;
+            width: calc(100% - 100px);
+            float: left;
+            span {
+                display: block;
+                line-height: 22px;
+            }
+        }
+        .price {
+            width: 100px;
+            float: right;
+            color: #333;
+            font-size: 13px;
+            display: block;
+            text-align: right;
+            line-height: 22px;
+            span {
+                display: block;
+                color: $best-price-item-price-color;
+                font-size: $best-price-item-city-size;
+                font-weight: 700;
+            }
+        }
+    }
+}

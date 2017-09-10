@@ -1,0 +1,52 @@
+// .select-style {
+//     background: $default-background-color;
+//     padding: 0;
+//     margin: 0;
+//     position: relative;
+//     overflow: hidden;
+//     z-index: 9;
+//     &:hover {
+//         &::after {
+//             background: $btn-primary-hover-bg;
+//         }
+//         select {
+//             border: 1px solid $btn-primary-hover-border;
+//         }
+//     }
+//     &::after {
+//         border: 1px solid $btn-primary-border;
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         bottom: 0;
+//         width: 15px;
+//         background: $btn-primary-bg;
+//         content: "\e252";
+//         pointer-events: none;
+//         font-family: 'Glyphicons Halflings';
+//         z-index: 10;
+//         color: $text-while-color;
+//         font-size: 8px;
+//         line-height: 32px;
+//         text-align: center;
+//         border-top-right-radius: 3px;
+//         border-bottom-right-radius: 3px;
+//     }
+//     select {
+//         padding: 0 8px;
+//         line-height: 34px;
+//         border: 1px solid $input-border-color;
+//         @include box-shadow (none);
+//         background: #fff;
+//         @include appearance(none);
+//         &:focus {
+//             outline: none;
+//         }
+//     }
+//     &.no-border-radius {
+//         @include border-radius($border-radius-base);
+//         .form-control {
+//             @include border-radius($border-radius-base);
+//         }
+//     }
+// }

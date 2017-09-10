@@ -1,0 +1,27 @@
+footer {
+    background: $footer-bg;
+    padding: 30px;
+    .page-title {
+        span {
+            background: $footer-bg;
+            color: #fff;
+        }
+    }
+    .footer-container {
+        padding-top: 30px;
+    }
+    .footer-menu {
+        li {
+            a {
+                line-height: 22px;
+                color: #ccc;
+                font-size: 13px;
+                opacity: .8;
+                padding-left: 15px;
+                position: relative;
+                font-weight: 400;
+                @include awesome-icon('before', '\f111', #ff4e0b, 6px, 18px, 0, auto, 0, 0);
+            }
+        }
+    }
+}

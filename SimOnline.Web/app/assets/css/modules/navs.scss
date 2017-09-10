@@ -1,0 +1,35 @@
+.nav-tabs {
+    border-bottom: none;
+    >li {
+        float: left; // Make the list-items overlay the bottom border
+        margin-bottom: 0; // Actual tabs (as links)
+        >a {
+            margin-right: 2px;
+            line-height: $line-height-base;
+            border: 1px solid transparent;
+            border-radius: $border-radius-large $border-radius-large 0 0;
+            color: $nav-tabs-link-color;
+            font-size: $nav-tabs-link-size;
+            text-transform: uppercase;
+            background-color: $nav-tabs-active-link-hover-bg;
+            opacity: .7;
+            &:hover {
+                background-color: $nav-tabs-active-link-hover-bg;
+            }
+        }
+        &.active > a {
+        &,
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+        }
+    }
+}
+
+.tab-content {
+    background: #fff;
+    .tab-pane {
+        padding: 15px;
+    }
+}

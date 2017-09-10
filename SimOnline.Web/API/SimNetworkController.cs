@@ -14,6 +14,7 @@ using SimOnline.Web.Models;
 namespace SimOnline.Web.API
 {
     [RoutePrefix("api/simnetwork")]
+    //[Authorize]
     public class SimNetworkController : ApiControllerBase
     {
         private ISimNetworkService _simNetworkService;

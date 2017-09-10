@@ -27,6 +27,6 @@ namespace SimOnline.Model.Models
 
         public virtual IEnumerable<FirstNumber> FirstNumbers { set; get; }
 
-        public virtual IEnumerable<SimNumber> SimNumbers { set; get; }
+        public virtual IEnumerable<SimStore> SimStores { set; get; }
     }
 }

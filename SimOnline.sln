@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimOnline.Web", "SimOnline.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimOnline.Model", "SimOnline.Model\SimOnline.Model.csproj", "{D2A0B2E7-10FA-49DC-86A8-8DC4D3836F81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimOnline.Common", "SimOnline.Common\SimOnline.Common.csproj", "{F67C3C5D-4E50-4B27-AA4F-111D6BF43C9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D2A0B2E7-10FA-49DC-86A8-8DC4D3836F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2A0B2E7-10FA-49DC-86A8-8DC4D3836F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2A0B2E7-10FA-49DC-86A8-8DC4D3836F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F67C3C5D-4E50-4B27-AA4F-111D6BF43C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F67C3C5D-4E50-4B27-AA4F-111D6BF43C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F67C3C5D-4E50-4B27-AA4F-111D6BF43C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F67C3C5D-4E50-4B27-AA4F-111D6BF43C9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

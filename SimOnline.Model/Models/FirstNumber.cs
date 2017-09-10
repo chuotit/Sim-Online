@@ -29,6 +29,6 @@ namespace SimOnline.Model.Models
         [Required]
         public Boolean HomeFlag { set; get; }
 
-        public virtual IEnumerable<SimNumber> SimNumbers { set; get; }
+        public virtual IEnumerable<SimStore> SimStores { set; get; }
     }
 }

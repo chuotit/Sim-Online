@@ -25,7 +25,7 @@ namespace SimOnline.Web.App_Start
         {
             // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
             ConfigAutofac(app);
-            //ConfigureAuth(app);
+            ConfigureAuth(app);
         }
 
         private void ConfigAutofac(IAppBuilder app)
@@ -41,7 +41,7 @@ namespace SimOnline.Web.App_Start
             builder.RegisterType<SimOnlineDbContext>().AsSelf().InstancePerRequest();
 
             //Asp.net Identity
-            builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            builder.RegisterType<ApplicationUserStore>().As<IUserStore<AppUser>>().InstancePerRequest();
             builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
             builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
             builder.Register(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();

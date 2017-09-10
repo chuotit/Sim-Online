@@ -1,0 +1,4 @@
+E:\My projects\Sim\SimOnline\SimOnline.Common\bin\Debug\SimOnline.Common.dll
+E:\My projects\Sim\SimOnline\SimOnline.Common\bin\Debug\SimOnline.Common.pdb
+E:\My projects\Sim\SimOnline\SimOnline.Common\obj\Debug\SimOnline.Common.dll
+E:\My projects\Sim\SimOnline\SimOnline.Common\obj\Debug\SimOnline.Common.pdb

@@ -13,15 +13,16 @@ using SimOnline.Web.Models;
 
 namespace SimOnline.Web.API
 {
-    [RoutePrefix("api/consignerLevel")]
-    public class ConsignerLevelController : ApiControllerBase
+    [RoutePrefix("api/agentLevel")]
+    //[Authorize]
+    public class AgentLevelController : ApiControllerBase
     {
-        private IConsignerLevelService _consignerLevelService;
+        private IAgentLevelService _agentLevelService;
 
-        public ConsignerLevelController(IErrorService errorService, IConsignerLevelService consignerLevelService)
+        public AgentLevelController(IErrorService errorService, IAgentLevelService agentLevelService)
             : base(errorService)
         {
-            this._consignerLevelService = consignerLevelService;
+            this._agentLevelService = agentLevelService;
         }
 
         [Route("getall")]
@@ -30,14 +31,14 @@ namespace SimOnline.Web.API
             return CreateHttpResponse(request, () =>
             {
                 int totalRow = 0;
-                var model = _consignerLevelService.GetAll();
+                var model = _agentLevelService.GetAll();
 
                 totalRow = model.Count();
                 var query = model.OrderByDescending(x => x.ID).Skip(page * pageSize).Take(pageSize);
 
-                var responseData = Mapper.Map<IEnumerable<ConsignerLevel>, IEnumerable<ConsignerLevelViewModel>>(query);
+                var responseData = Mapper.Map<IEnumerable<AgentLevel>, IEnumerable<AgentLevelViewModel>>(query);
 
-                var paginationSet = new PaginationSet<ConsignerLevelViewModel>()
+                var paginationSet = new PaginationSet<AgentLevelViewModel>()
                 {
                     Items = responseData,
                     Page = page,
@@ -55,9 +56,9 @@ namespace SimOnline.Web.API
         {
             return CreateHttpResponse(request, () =>
             {
-                var model = _consignerLevelService.GetById(id);
+                var model = _agentLevelService.GetById(id);
 
-                var responseData = Mapper.Map<ConsignerLevel, ConsignerLevelViewModel>(model);
+                var responseData = Mapper.Map<AgentLevel, AgentLevelViewModel>(model);
 
                 var response = request.CreateResponse(HttpStatusCode.OK, responseData);
 
@@ -66,7 +67,7 @@ namespace SimOnline.Web.API
         }
 
         [Route("create")]
-        public HttpResponseMessage Post(HttpRequestMessage request, ConsignerLevelViewModel consignerLevelVm)
+        public HttpResponseMessage Post(HttpRequestMessage request, AgentLevelViewModel agentLevelVm)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -77,18 +78,18 @@ namespace SimOnline.Web.API
                 }
                 else
                 {
-                    ConsignerLevel newConsignerLevel = new ConsignerLevel();
-                    newConsignerLevel.UpdateConsignerLevel(consignerLevelVm);
-                    var consignerLevelReturn = _consignerLevelService.Add(newConsignerLevel);
-                    _consignerLevelService.SaveChanges();
-                    response = request.CreateResponse(HttpStatusCode.Created, consignerLevelReturn);
+                    AgentLevel newAgentLevel = new AgentLevel();
+                    newAgentLevel.UpdateAgentLevel(agentLevelVm);
+                    var agentLevelReturn = _agentLevelService.Add(newAgentLevel);
+                    _agentLevelService.SaveChanges();
+                    response = request.CreateResponse(HttpStatusCode.Created, agentLevelReturn);
                 }
                 return response;
             });
         }
 
         [Route("update")]
-        public HttpResponseMessage Put(HttpRequestMessage request, ConsignerLevelViewModel consignerLevelVm)
+        public HttpResponseMessage Put(HttpRequestMessage request, AgentLevelViewModel agentLevelVm)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -99,12 +100,12 @@ namespace SimOnline.Web.API
                 }
                 else
                 {
-                    var postConsignerLevelDb = _consignerLevelService.GetById(consignerLevelVm.ID);
-                    postConsignerLevelDb.UpdateConsignerLevel(consignerLevelVm);
-                    _consignerLevelService.Update(postConsignerLevelDb);
-                    _consignerLevelService.SaveChanges();
+                    var postAgentLevelDb = _agentLevelService.GetById(agentLevelVm.ID);
+                    postAgentLevelDb.UpdateAgentLevel(agentLevelVm);
+                    _agentLevelService.Update(postAgentLevelDb);
+                    _agentLevelService.SaveChanges();
 
-                    var responseData = Mapper.Map<ConsignerLevel, ConsignerLevelViewModel>(postConsignerLevelDb);
+                    var responseData = Mapper.Map<AgentLevel, AgentLevelViewModel>(postAgentLevelDb);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
@@ -123,8 +124,8 @@ namespace SimOnline.Web.API
                 }
                 else
                 {
-                    _consignerLevelService.Delete(id);
-                    _consignerLevelService.SaveChanges();
+                    _agentLevelService.Delete(id);
+                    _agentLevelService.SaveChanges();
                     response = request.CreateResponse(HttpStatusCode.OK);
                 }
                 return response;

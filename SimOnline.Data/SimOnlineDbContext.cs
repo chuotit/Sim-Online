@@ -4,7 +4,7 @@ using SimOnline.Model.Models;
 
 namespace SimOnline.Data
 {
-    public class SimOnlineDbContext : IdentityDbContext<ApplicationUser>
+    public class SimOnlineDbContext : IdentityDbContext<AppUser>
     {
         public SimOnlineDbContext() : base("SimOnline")
         {
@@ -14,10 +14,15 @@ namespace SimOnline.Data
 
         public DbSet<SimNetwork> SimNetworks { set; get; }
         public DbSet<FirstNumber> FirstNumbers { set; get; }
-        public DbSet<SimNumber> SimNumbers { set; get; }
+        public DbSet<SimStore> SimStores { set; get; }
         public DbSet<Error> Errors { set; get; }
-        public DbSet<Consigner> Consigners { set; get; }
-        public DbSet<ConsignerLevel> ConsignerLevels { set; get; }
+        public DbSet<Agent> Agents { set; get; }
+        public DbSet<AgentLevel> AgentLevels { set; get; }
+
+        public DbSet<AppGroup> AppGroups { set; get; }
+        public DbSet<AppRole> AppRoles { set; get; }
+        public DbSet<AppRoleGroup> AppRoleGroups { set; get; }
+        public DbSet<AppUserGroup> AppUserGroups { set; get; }
 
         public static SimOnlineDbContext Create()
         {
@@ -26,8 +31,15 @@ namespace SimOnline.Data
 
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
-            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("AppUserRoles");
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId).ToTable("AppUserLogins");
+            builder.Entity<IdentityRole>().ToTable("AppRoles");
+            builder.Entity<IdentityUserClaim>().HasKey(i => i.UserId).ToTable("AppUserClaims");
+            builder.Entity<IdentityUser>().ToTable("AppUsers");
+
+            builder.Entity<Agent>().ToTable("Agents");
+            builder.Entity<AgentLevel>().HasKey(i=> i.ID).ToTable("AgentLevels");
+            builder.Entity<SimStore>().ToTable("SimStores");
         }
     }
 }

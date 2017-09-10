@@ -1,0 +1,17 @@
+.section {
+    padding: $section-padding 0;
+    .section-header {
+        margin-bottom: 20px;
+        .section-title {
+            color: $brand-success;
+            font-size: 30px;
+            span {
+                color: $gray-darker;
+                margin-left: 5px;
+            }
+        }
+        .section-description {
+            display: none;
+        }
+    }
+}
